@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>bootstrap highlight</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<style>
+	.my-round-btn {
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+	}
+	</style>
+	<script>
+
+    </script>
+
+</head>
+<body>
+  <h3> font-awesome ( &lt;span class="fa fa-xy"/&gt; ) </h3>
+   <p>fa-envelope: <span class="fa fa-envelope"/> &nbsp;&nbsp; fa-search: <span class="fa fa-search"/> &nbsp;&nbsp; fa-print: <span class="fa fa-print"/></p>
+   <p>fa-euro: <span class="fa fa-euro"/> &nbsp;&nbsp; fa-usd: <span class="fa fa-usd"/> &nbsp;&nbsp; fa-asterisk: <span class="fa fa-asterisk"/></p>
+   <p>fa-heart: <span class="fa fa-heart"/> &nbsp;&nbsp; fa-star: <span class="fa fa-star"/> &nbsp;&nbsp; fa-user: <span class="fa fa-user"/></p>
+   
+    <p>fa-check: <span class="fa fa-check"/> &nbsp;&nbsp; fa-remove: <span class="fa fa-remove"/> &nbsp;&nbsp; fa-plus: <span class="fa fa-plus"/></p>
+   <p>fa-minus: <span class="fa fa-minus"/> &nbsp;&nbsp; fa-pencil: <span class="fa fa-pencil"/> &nbsp;&nbsp; fa-music: <span class="fa fa-music"/></p>
+   <p>fa-signal: <i class="fa fa-signal"></i> &nbsp;&nbsp; fa-home: <span class="fa fa-home"/> &nbsp;&nbsp; fa-file: <span class="fa fa-file"/></p>
+   
+    <p>fa-clock: <span class="fa fa-clock"/> &nbsp;&nbsp; fa-download: <span class="fa fa-download"/> &nbsp;&nbsp; fa-refresh: <span class="fa fa-refresh"/></p>
+   <p>fa-volume-up: <span class="fa fa-volume-up"/> &nbsp;&nbsp; fa-book: <span class="fa fa-book"/> &nbsp;&nbsp; fa-camera: <span class="fa fa-camera"/></p>
+   <p>fa-arrows-alt : <span class="fa fa-arrows-alt "/> &nbsp;&nbsp; fa-play: <span class="fa fa-play"/> &nbsp;&nbsp; fa-pause: <span class="fa fa-pause"/></p>
+   
+    <p>fa-stop: <span class="fa fa-stop"/> &nbsp;&nbsp; fa-fast-backward: <span class="fa fa-fast-backward"/> &nbsp;&nbsp; fa-step-backward: <span class="fa fa-step-backward"/> &nbsp;&nbsp; fa-backward: <span class="fa fa-backward"/></p>
+   <p> fa-forward: <span class="fa fa-forward"/>&nbsp;&nbsp;  fa-step-forward: <span class="fa fa-step-forward"/> &nbsp;&nbsp; fa-fast-forward: <span class="fa fa-fast-forward"/> &nbsp;&nbsp; fa-save: <span class="fa fa-save"/></p>
+   <p>fa-chevron-left: <span class="fa fa-chevron-left"/> &nbsp;&nbsp; fa-chevron-right: <span class="fa fa-chevron-right"/> &nbsp;&nbsp; fa-chevron-circle-down: <span class="fa fa-chevron-circle-down"/>&nbsp;&nbsp; fa-chevron-circle-up: <span class="fa fa-chevron-circle-up"/></p>
+   <p> ... , ... </p>
+   <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank">liste des icones de font-awesome</a>
+   <hr/>
+   
+<p>Envelope icon as a link:
+  <a href="#"><span class="fa fa-envelope"/></a>
+</p>
+<p>Search icon on a styled button:
+  <button type="button" class="btn btn-info">
+    <span class="fa fa-search"/> Search
+  </button>
+&nbsp;&nbsp;&nbsp;  
+Print icon on a styled link button:
+  <a href="#" class="btn btn-success btn-lg">
+    <span class="fa fa-print"/> Print
+  </a>
+</p> 
+
+<h5> boutons ronds avec fa (border-radius css attribute in my-round-btn custom class)</h5>
+<button class="btn btn-primary my-round-btn"><span class="fa fa-user"></span></button>
+<button class="btn btn-default my-round-btn">
+    <span class="fa fa-shopping-cart" style="color:green"/>
+</button>
+
+ <hr/>
+  <h3> badge (indicateur dans rond) et label (dans rectangle arrondi) </h3>
+   <a href="#">News link with sub span/.badge<span class="badge badge-pill badge-primary">5</span></a><br/>
+   <a href="#">Updates link with sub span/.badge<span class="badge badge-pill badge-primary">2</span></a> <br/>
+   <br/>
+   <p><span class="badge badge-info">a</span> texte1 qui va bien avec span/.badge</p>
+   <p><span class="badge badge-danger">b</span> texte2 qui va bien avec span/.badge</p>
+   <br/>
+   <button type="button" class="btn btn-primary">primary button with sub span/.badge <span class="badge badge-secondary">7</span></button>
+   <br/>
+   <br/>
+   <p> texte1 qui va bien avec span/.badge .badge-pill .badge-info <span class="badge badge-pill badge-info">nouveau</span></p>
+   <p> texte2 qui va bien avec span/.badge .badge-info <span class="badge badge-info">en promo</span></p>
+   
+   variantes de .badge (ex .label):
+    <span class="badge badge-secondary">label-secondary</span>
+	<span class="badge badge-primary">label-primary</span>
+	<span class="badge badge-success">label-success</span>
+	<span class="badge badge-info">label-info</span>
+	<span class="badge badge-warning">label-warning</span>
+	<span class="badge badge-danger">label-danger</span>
+  
+   <hr/>
+   <h3> effets sur images (.rounded , .rounded-circle , .img-thumbnail , .img-fluid)</h3>
+    <img src="images/paris.jpg" class="rounded" alt="paris" width="150" height="100" />
+	<img src="images/sanfran.jpg" class="rounded-circle" alt="sanfransico" width="150" height="100" />
+	<img src="images/newyork.jpg" class="img-thumbnail" alt="newyork" width="150" height="100" />
+	<div class="row">
+	   <div class="offset-1 col-2">
+	      <img src="images/paris.jpg" class="img-fuild" alt="paris" /><br/>
+		  (responsive via .img-fluid)
+		</div>
+	</div>
+  <hr/>
+  <h3> div/.card card-body bg-light (encradrement, ex well) </h3>
+    
+	<div class="card card-body bg-light">encadrement avec bordure arrondie , padding et fond grise par defaut <br/>
+	taille moyenne par defaut</div>
+	<div class="container">
+	    <div class="card card-body bg-light">div/.card card-body bg-light inside div/.container</div>
+	</div>
+	
+	 <p>This is some text (outside jumbotron).</p>
+	 
+ <hr/>	 
+	<h3> jumbotron (sorte d'encadrement avec grossissement relatif a preciser via h1 ou autre) </h3>
+
+	<div class="jumbotron">
+     ...
+    <h2>texte (grossi) dans h2 dans jumbotron</h2>
+	...
+  </div>
+  <p>This is some text (outside jumbotron).</p>
+	
+</body>
+</html>

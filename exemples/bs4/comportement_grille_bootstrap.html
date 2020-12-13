@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>comportement grille bootstrap 4</title>
+	
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+    <script>
+	    function fct(){
+		  alert("768/2="+(768/2));
+		}
+	</script>
+</head>
+<body onLoad="">
+   <h2>grille bootstrap 4 .row / .col , 12 colonnes</h2>
+   <table border="1" style="margin-left : 10px;">
+     <tr><th>bootstrap<br/>style<br/>part</th>
+	     <th>main window<br/>ref. size<br/>for 12 cols</th>
+		 <th>minimum<br/> size<br/>of 1 col</th>
+		 <th>minimum<br/> size<br/>of 2 cols</th>
+		 <th>minimum<br/> size<br/>of 3 cols</th>
+		 <th>minimum<br/> size<br/>of 4 cols</th>
+		 <th>minimum<br/> size<br/>of 6 cols</th>
+		 <th>minimum<br/> size<br/>of 8 cols</th>
+	</tr>
+	 <tr><td>col- (ex -xs-)</td><td>jamais empilage</td><td colspan='6'>no limit</td></tr>
+	 <tr><td>col-sm-</td><td>576px</td><td>576/12=48px</td><td>96px</td><td>144px</td><td>192px</td><td>288px</td><td>384px</td></tr>
+	 <tr><td>col-md-</td><td>768px</td><td>768/12=64px</td><td>128px</td><td>196px</td><td>256px</td><td>384px</td><td>512px</td></tr>
+	 <tr><td>col-lg-</td><td>992px</td><td>992/12=83px</td><td>166px</td><td>248px</td><td>331px</td><td>496px</td><td>662px</td></tr>
+	 <tr><td>col-xl-</td><td>1200px</td><td>1200/12=100px</td><td>200px</td><td>300px</td><td>400px</td><td>600px</td><td>800px</td></tr>
+   </table>
+   <p> NB: ces dimensions sont "maximales" , en pratique --> un peu moins (marges du "container" , ...)</p>
+   <hr/>
+   <h3>(ex col-xs- bs3 , col- bs4) - toujours redimensionnement , jamais empilage</h3>
+   <!-- <div class="container"> --> <!-- le "container" apporte une marge par défaut 
+                                et améliore la gestion de la grille -->
+   <div class="container-fluid"> <!-- avec "container-fluid" : occupe toute la largeur 
+                                      sans marge , et améliore gestion grille -->   
+		<div class="row c1">
+		   <div class="col-4 c2 wb">col-4</div>
+		   <div class="col-8 c3 wb">col-8</div>
+		</div>	
+		<hr/>
+		<div class="row c1">
+		   <div class="col-3 c2 wb">col-3</div>
+		   <div class="col-3 c3 wb">col-3</div>
+		   <div class="col-3 c4 wb">col-3</div>
+		   <div class="col-3 c5 wb">col-3</div>
+		</div>
+	</div>
+  <h3>small (sm) - empilage en dessous de 576px</h3>
+   <div class="container-fluid"> 
+	<div class="row c1">
+       <div class="col-sm-4 c2 wb">col-sm-4</div>
+       <div class="col-sm-8 c3 wb">col-sm-8</div>
+    </div>	
+	<hr/>
+	<div class="row c1">
+       <div class="col-sm-3 c2 wb">col-sm-3</div>
+       <div class="col-sm-3 c3 wb">col-sm-3</div>
+	   <div class="col-sm-3 c4 wb">col-sm-3</div>
+	   <div class="col-sm-3 c5 wb">col-sm-3</div>
+    </div>
+    </div> 
+	<h3>medium (md)- empilage en dessous de 768px</h3>
+	<div class="container-fluid">
+    <div class="row c1">
+       <div class="col-md-4 c2 wb">col-md-4</div>
+       <div class="col-md-8 c3 wb">col-md-8</div>
+    </div>	
+	<hr/>
+	<div class="row c1">
+       <div class="col-md-3 c2 wb">col-md-3</div>
+       <div class="col-md-3 c3 wb">col-md-3</div>
+	   <div class="col-md-3 c4 wb">col-md-3</div>
+	   <div class="col-md-3 c5 wb">col-md-3</div>
+    </div>
+	</div>
+	<h3>large (lg)- empilage en dessous de 992px</h3>
+    <div class="container-fluid">
+	<div class="row c1">
+       <div class="col-lg-4 c2 wb">col-lg-4</div>
+       <div class="col-lg-8 c3 wb">col-lg-8</div>
+    </div>	
+	</div>
+	
+	<h3>large (xl)- empilage en dessous de 1200px</h3>
+    <div class="container-fluid">
+	<div class="row c1">
+       <div class="col-xl-4 c2 wb">col-lg-4</div>
+       <div class="col-xl-8 c3 wb">col-lg-8</div>
+    </div>	
+	</div>
+	
+</body>
+</html>

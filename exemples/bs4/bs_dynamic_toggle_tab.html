@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>dynamic toggle tab</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+
+  <h3> bootstrap tabs or pill(with automatic switch)</h3>
+  <p> Attention: l'aspect dynamique du switch d'onglet necessite les librairies
+  <b>jquery.js</b> et <b>bootstrap.bundle.js</b></p>
+  <br/>
+  <p> &lt;ul class="nav nav-tabs" &gt; incluant  </p>
+  <p> &lt;li class="nav-item" &gt; <b>&lt;a class="nav-link" href="#<font color='blue'>id_tabXy</font>" <font color='red'>data-toggle="tab"</font> &gt; </b>onglet_n <b>&lt;/a&gt;</b> &lt;/li&gt; pour chaque titre d'onglet </p>
+  <p> le &lt;a&gt; de l'onglet par defaut comportera idealement class="nav-link active" </p>
+  <hr/>
+  <p> Plus bas, un bloc &lt;div <font color='red'>class="tab-content"</font>&gt; ... &lt;div&gt;   
+      comportera un bloc div pour chaque contenu d'onglet </p>
+  <p> chaque corps/contenu d'onglet sera structure par un bloc div de classe .tab-pane </p>
+  <p> &lt;div id="<font color='blue'>id_tabXy</font>" class="<font color='red'>tab-pane</font> "&gt;contenu onglet Xy&lt;/div&gt; </p>  
+  <p> Le bloc &lt;div&gt; correspondant au contenu de l'onglet par defaut aura idealement les 
+      classes de styles complementaires "show active" </p>
+  <br/>	  
+	  
+     <ul class="nav nav-pills"> <!-- nav-tabs or nav-pills -->
+	   <li class="nav-item"><a class="nav-link " href="#id_tab1" data-toggle="tab">onglet_1</a></li>
+	   <li class="nav-item" ><a class="nav-link active" href="#id_tab2" data-toggle="tab">onglet_2</a></li>
+	   <li class="nav-item" ><a class="nav-link" href="#id_tab3" data-toggle="tab">onglet_3</a></li>
+	</ul>
+		
+	<div class="tab-content">
+	   <div id="id_tab1" class="tab-pane show container">
+	      contenu onglet 1
+	   </div>
+	   <div id="id_tab2" class="tab-pane container active">
+	      contenu onglet 2
+	   </div>
+	   <div id="id_tab3" class="tab-pane container">
+	      contenu onglet 3
+	   </div>
+	</div>
+	<br/>
+</body>
+</html>

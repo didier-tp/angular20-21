@@ -1,0 +1,56 @@
+p { font-size: 1.6em ; }
+
+label.simpleAlign {
+  width: 8em;
+  display: inline-block;
+  text-align: right;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(2n) {
+  color: black;
+  background-color: white;
+}
+
+tbody tr:nth-child(2n+1) {
+  color: white;
+  background-color: black;
+}
+
+thead th {
+  background-color: yellow;
+}
+
+.mywrapbox {
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.myitem {
+  flex: 1 1 auto;
+  text-align: center;
+  padding: 2px;
+  margin: 8px;
+}
+
+.boutonRondCarre {
+  border-radius: 12px 0 12px 0;
+  background: #f5f5f5;
+  border: none;
+  color: #555;
+  font: bold 12px Verdana;
+  padding: 6px 0 6px 0;
+  border: 1px solid #ccc;
+}
+
+.boutonCoinArrondi {
+  border: none;
+  padding: 6px 0 6px 0;
+  border-radius: 8px;
+  background: #f5f5f5;
+  font: bold 13px Arial;
+  color: #555;
+}
+

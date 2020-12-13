@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>cards (ex panels)</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body style="margin-left:4px;">
+  <h3> bootstrap cards (ex panels)</h3>
+  <hr/>
+  <div class="card">
+	<div class="card-body">Basic card</div>
+  </div>
+  <hr/>
+  <p>card as div/.card  with sub-div</p>
+  <div class="card bg-default">
+    <div class="card-header">
+      <h4 class="card-title">h4/.card-title in div/.card-header ou bien texte du titre directement dans div/.card-header </h4>
+    </div>
+    <div class="card-body">div/.card-body</div>
+    <div class="card-footer">div/.card-footer</div>
+  </div>
+  <br/>
+  <h3> cards avec card-header bg-info , bg-primary , ... </h3>
+  <div class="row">
+    <div class="col-2">
+	   <div class="card my-highlight">
+			<div class="card-header bg-light">bg-light</div>
+			<div class="card-body">...</div>
+       </div>
+	</div>
+    <div class="col-2">
+	   <div class="card my-highlight-anim">
+			<div class="card-header bg-primary text-white">bg-primary text-white</div>
+			<div class="card-body">...</div>
+       </div>
+	</div>
+	<div class="col-2">
+	   <div class="card">
+			<div class="card-header bg-secondary text-light">bg-secondary text-light</div>
+			<div class="card-body">...</div>
+       </div>
+	</div>
+	<div class="col-2">
+	   <div class="card">
+			<div class="card-header bg-success">bg-success</div>
+			<div class="card-body">...</div>
+       </div>
+	</div>
+	<div class="col-2">
+	   <div class="card">
+			<div class="card-header bg-warning">bg-warning</div>
+			<div class="card-body">...</div>
+       </div>
+	</div>
+	<div class="col-2">
+	   <div class="card">
+			<div class="card-header bg-info">bg-info</div>
+			<div class="card-body">...</div>
+       </div>
+	</div>
+  </div>
+  
+  <h3> collapse / collapsible panel </h3>
+  
+   <a href="#id_divXy" data-toggle="collapse">toggle collapse div of id_divXy</a> <button data-toggle="collapse" data-target="#id_divXy">toggle collapse div with button</button>
+	<div id="id_divXy" class="collapse">
+	collaspible div with id
+	</div>
+	<hr/>
+	<br/>
+	  <div class="card">
+		<div class="card-header bg-primary">
+		  	<a data-toggle="collapse" class="text-light"
+			   href="#collapse1">Collapsible panel (when click on title)</a>
+		  </div>
+		<div id="collapse1" class="collapse">
+		  <div class="card-body">Panel Body</div>
+		  <!-- <div class="panel-footer">Panel Footer</div> -->
+		</div>
+	  </div>
+	<hr/>
+	 <h3> accordion (exclusive collapse) with same data-parent div </h3>
+  
+  
+	<br/>
+	 <div id="season_accordion">
+	  <div class="card">
+		<div class="card-header bg-info"><h4><a data-toggle="collapse" class="text-light" href="#hiver" data-parent="#season_accordion">hiver</a></h4></div>
+		<div id="hiver" class="collapse show"> <div class="card-body">ski neige</div></div>
+	  </div>
+	   <div class="card">
+		<div class="card-header bg-info"><h4><a data-toggle="collapse" class="text-light"  href="#printemps" data-parent="#season_accordion">printemps</a></h4></div>
+		<div id="printemps" class="collapse"> <div class="card-body">fleur</div></div>
+	  </div>
+	   <div class="card">
+		<div class="card-header bg-info"><h4><a data-toggle="collapse" class="text-light"  href="#ete" data-parent="#season_accordion">ete</a></h4></div>
+		<div id="ete" class="collapse"> <div class="card-body">soleil plage</div></div>
+	  </div>
+	   <div class="card">
+		<div class="card-header bg-info"><h4><a data-toggle="collapse" class="text-light"  href="#automne" data-parent="#season_accordion">automne</a></h4></div>
+		<div id="automne" class="collapse"> <div class="card-body">feuilles</div></div>
+	  </div>
+	</div>
+	
+	<hr/>
+	Card with image:
+	<div class="row">
+	<div class="col-6">
+	 <div class="card" style="width:300px">
+	 <img class="card-img-top" src="images/img_avatar1.png" alt="Card image">
+		<div class="card-body">
+			<h4 class="card-title">Jean Bon</h4>
+			<p class="card-text">text in .card-body</p>
+			<a href="#" class="btn btn-primary">See Profile</a>
+		</div>
+	 </div>
+	</div>
+	
+	<div class="col-6">
+	 <div class="card" style="width:500px">
+	  <img class="card-img-top" src="images/img_avatar1.png" alt="Card image">
+		<div class="card-img-overlay">
+			<h4 class="card-title">Nom superpose sur image</h4>
+			<p class="card-text">text in .card-img-overlay</p>
+			<a href="#" class="btn btn-primary">See Profile</a>
+		</div>
+	</div>
+	</div>
+	
+	</div>
+  
+</body>
+</html>

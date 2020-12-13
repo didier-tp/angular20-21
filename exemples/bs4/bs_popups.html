@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>bootstrap popups</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+  <h3> bootstrap modal popups</h3>
+   
+   <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+
+   <!-- Trigger the modal with a link -->
+<a href="#" data-toggle="modal" data-target="#myModal">Open Modal</a>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-sm"> <!-- different sizes : modal-sm , medium by default , modal-lg -->
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+		<p>Some text2 in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+   
+</body>
+</html>

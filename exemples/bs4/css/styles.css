@@ -1,0 +1,58 @@
+p { font-size: 12pt ; }
+
+.c1 {
+  background-color: #A9A9A9; /* light grey */
+}
+
+.wb {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.c2{
+  background-color:  #a94442; /* red */
+  font-family: courier;
+  font-size : 1.8vw; /* vw = viewport width = unité équivalent à 1% de la largeur de la fenêtre */                     
+  
+}
+
+
+.c3 {
+  background-color: #42A948; /* green */
+}
+
+.c4{
+  background-color:  #4442c9; /* blue */
+}
+
+.c5{
+  background-color:  yellow;
+}
+
+
+@keyframes highlight-animation 
+{ 
+  0% { transform: scale(1); }
+ 50% { transform: scale(0.98) ; box-shadow: 0px 0px 0px 2px #000000;} 
+ 100% { transform: scale(1); }
+ }
+
+.my-highlight-anim:hover{
+	animation: highlight-animation 0.5s;
+}
+/* box-shadows :  offset-x | offset-y | blur-radius | spread-radius | color */
+.my-highlight:hover{
+	transform: scale(0.97) ; box-shadow: 0px 0px 1em 1px #000000;
+	transition: 0.5s ease;
+}
+
+.dropdown:hover>.dropdown-menu {
+	display: block;
+}
+
+	
+.dropdown-menu {
+	 margin:0px;
+	 padding:0px;
+}

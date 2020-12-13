@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>autre comportement grille bootstrap 4</title>
+	
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+   
+</head>
+<body onLoad="">
+   <h1>nb colonnes selon largeur fenêtre navigateur</h1>
+   (row comportant plein de col qui débordent (plus que 12)
+    pour disposition de cards ou ...)
+   
+   <!-- <div class="container"> --> <!-- le "container" apporte une marge par défaut 
+                                et améliore la gestion de la grille -->
+   <div class="container-fluid"> <!-- avec "container-fluid" : occupe toute la largeur 
+                                      sans marge , et améliore gestion grille -->   
+		<h2><b>col-sm-6 col-md-4 col-xl-3 </b>: 1 colonne si plus petit que sm,
+		    2 cols (d'un poid de 6) si sm , 3 cols (d'un poid de 4) si md ou lg ,
+			4 cols (d'un poid de 3) si xl</h2>
+		<div class="row c1">
+		   <div class="col-sm-6 col-md-4 col-xl-3 mb-2 c2 wb">aaa</div>
+		   <div class="col-sm-6 col-md-4 col-xl-3 mb-2 c3 wb">bbb</div>
+		   <div class="col-sm-6 col-md-4 col-xl-3 mb-2 c4 wb">ccc</div>
+		   <div class="col-sm-6 col-md-4 col-xl-3 mb-2 c5 wb">ddd</div>
+		   <div class="col-sm-6 col-md-4 col-xl-3 mb-2 c2 wb">eee</div>
+		   <div class="col-sm-6 col-md-4 col-xl-3 mb-2 c3 wb">fff</div>
+		   <div class="col-sm-6 col-md-4 col-xl-3 mb-2 c4 wb">ggg</div>
+		</div>
+		
+		<h2>col-sm-6 col-lg-4 : 1 colonne si plus petit que sm,
+		    2 cols (d'un poid de 6)si sm ou md, 3 cols (d'un poid de 4)si lg ou xl</h2>
+		<div class="row c1">
+		   <div class="col-sm-6 col-lg-4 mb-2 c2 wb">aaa</div>
+		   <div class="col-sm-6 col-lg-4 mb-2 c3 wb">bbb</div>
+		   <div class="col-sm-6 col-lg-4 mb-2 c4 wb">ccc</div>
+		   <div class="col-sm-6 col-lg-4 mb-2 c5 wb">ddd</div>
+		   <div class="col-sm-6 col-lg-4 mb-2 c2 wb">eee</div>
+		   <div class="col-sm-6 col-lg-4 mb-2 c3 wb">fff</div>
+		   <div class="col-sm-6 col-lg-4 mb-2 c4 wb">ggg</div>
+		</div>
+		
+		<h2>col-sm-6 col-md-4 col-lg-3 col-xl-2: 1 colonne si plus petit que sm,
+		    2 cols (d'un poid de 6)si sm , 3 cols (d'un poid de 4)si md ,
+			4 cols (d'un poid de 3)si lg , 6 cols (d'un poid de 2)si xl</h2>
+		<div class="row c1">
+		   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 c2 wb">aaa</div>
+		   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 c3 wb">bbb</div>
+		   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 c4 wb">ccc</div>
+		   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 c5 wb">ddd</div>
+		   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 c2 wb">eee</div>
+		   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 c3 wb">fff</div>
+		   <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 c4 wb">ggg</div>
+		</div>
+	</div>
+	
+</body>
+</html>

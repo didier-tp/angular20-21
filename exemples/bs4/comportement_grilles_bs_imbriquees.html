@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>comportement grilles imbriquees - bootstrap 4</title>
+	
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+   <h2>grilles imbriquees -  bootstrap 4<h2>
+   <h3>col-  dans col-4 et col-8</h3>
+    <div class="row c1">
+       <div class="col-4 c2 wb">
+	      <div class="row c1">
+		    <div class="col-6 c3 wb">col-6</div>
+            <div class="col-6 c3 wb">col-6</div>
+		  </div>
+	   </div>
+       <div class="col-8 c2 wb">
+		   <div class="row c1">
+			   <div class="col-3 c4 wb">col-3</div>
+			   <div class="col-3 c4 wb">col-3</div>
+			   <div class="col-3 c4 wb">col-3</div>
+			   <div class="col-3 c4 wb">col-3</div>
+			</div>
+	   </div>
+    </div>	
+	
+  <h3>small (sm) - empilage en dessous de 576px</h3>
+    <div class="row c1">
+       <div class="col-sm-4 c2 wb">
+	       <div class="row c1">
+		    <div class="col-sm-6 c3 wb">col-sm-6</div>
+            <div class="col-sm-6 c3 wb">col-sm-6</div>
+		  </div>
+	   </div>
+       <div class="col-sm-8 c2 wb">
+		<div class="row c1">
+		   <div class="col-sm-3 c4 wb">col-sm-3</div>
+		   <div class="col-sm-3 c4 wb">col-sm-3</div>
+		   <div class="col-sm-3 c4 wb">col-sm-3</div>
+		   <div class="col-sm-3 c4 wb">col-sm-3</div>
+		</div>
+	   </div>
+    </div>	
+	
+	<hr/>
+	<h3> saut de colonnes (offset-1 , offset-sm-1 , ...) </h3>
+	<div class="row c1">
+		   <div class="col-3 c2 wb">col-3</div>
+		   <div class="col-3 c3 wb">col-3</div>
+		   <div class="col-3 c4 wb">col-3</div>
+		   <div class="col-3 c5 wb">col-3</div>
+		</div>
+	<div class="row c1">
+		   <div class="col-3 c2 wb">col-3</div>
+		   <div class="offset-1 col-2 c3 wb">offset-1 col-2</div>
+		   <div class="offset-2 col-2 c4 wb">offset-2 col-2</div>
+		   <div class="offset-1 col-1 c5 wb">..offset-1</div>
+	</div>
+	
+	<hr/>
+	<h3> re-ordonner des colonnes (order-1 , ... , order-2 ) </h3>
+	<div class="row c1">
+		   <div class="col-3 c2 wb">col-3</div>
+		   <div class="col-3 c3 wb">col-3</div>
+		   <div class="col-3 c4 wb">col-3</div>
+		   <div class="col-3 c5 wb">col-3</div>
+		</div>
+	<div class="row c1">
+		   <div class="order-2 col-3 c2 wb">order-2 col-3</div>
+		   <div class="order-1 col-3 c3 wb">order-1 col-3</div>
+		   <div class="order-4 col-3 c4 wb">order-4 col-3</div>
+		   <div class="order-3 col-3 c5 wb">order-3 col-3</div>
+	</div>
+</body>
+</html>

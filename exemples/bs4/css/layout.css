@@ -1,0 +1,25 @@
+/* comment in css
+   rappels des selecteurs:
+  balise { ... }
+  #id { ...}
+  .classXY { ....}
+  sel1 , sel2 , sel3 { ...}
+  balise#idPrecis { ...} 
+  balise sousBalise {  ... pour sous balise si englobee par balise } 
+*/
+#mainHeader, #mainSideMenu, #mainContent, #mainFooter { padding:1px 0;}
+
+#mainHeader  {  background-color:#FF9900; text-align:center;  }
+#mainNav     {  background-color : #cccccc;  }
+
+#mainSideMenu {  background-color:#FF3366; }
+
+#mainContent { background-color:#9966FF; }
+
+#mainFooter  { background-color:#669933; text-align:center; }
+
+article { background-color : #00cc00; }
+section { background-color : yellow; }
+
+label { display: block; width: 150px;  float: left;}
+output {  font-weight:bold; }
