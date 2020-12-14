@@ -1,20 +1,35 @@
-<html>
-<head>
-    <title>dom_curd_devise</title>
-	<script src="./js/dom_crud_devise.js" ></script>
-</head>
-<body id="main" >
+
    
    <h1>CRUD en mémoire via javascript et api DOM</h1>
    <!-- Devise : code:EUR , nom=Euro , change=1 -->
-   code: <input id="code" type="text" /> <br/>
-   nom: <input id="nom" type="text" /> <br/>
-   change: <input id="change" type="text" /> <br/>
-   <input type="button" onclick="newDevise()" value="New"></input>
-   <input type="button" id="bntAdd" onclick="ajoutDevise()" value="Add"></input> 
-   <input type="button" id="bntUpdate" onclick="updateDevise()" value="Update"></input>
-   <input type="button" id="bntDelete" onclick="deleteDevise()" value="Delete"></input> 
-   
+   <form class="form-horizontal">
+       <div class="form-group row">
+         <label class="control-label col-sm-3 text-sm-right">code:</label> 
+		 <div class="col-sm-9">
+		      <input id="code" class="form-control" type="text" /> 
+	     </div>
+	   </div>
+       <div class="form-group row">
+         <label class="control-label col-sm-3 text-sm-right">nom:</label> 
+         <div class="col-sm-9">		 
+		      <input id="nom" class="form-control" type="text" /> 
+	     </div>
+	   </div>
+       <div class="form-group row">
+         <label class="control-label col-sm-3 text-sm-right">change:</label>
+         <div class="col-sm-9">		 
+		     <input id="change" class="form-control" type="text" /> 
+		 </div>
+	   </div>
+	   <div class="form-group row">
+         <div class="offset-sm-3 col-sm-9">
+			<input type="button" onclick="newDevise()" value="New"></input>
+			<input type="button" id="bntAdd" onclick="ajoutDevise()" value="Add"></input> 
+			<input type="button" id="bntUpdate" onclick="updateDevise()" value="Update"></input>
+			<input type="button" id="bntDelete" onclick="deleteDevise()" value="Delete"></input>
+         </div>
+	   </div>   
+   </form> 
    <h3>liste des Devises<h3>
    <table border="1" id="tableDevises">
      <thead>
@@ -24,5 +39,3 @@
 	   <!-- <tr id="tr_USD"><td>USD</td><td>Dollar</td><td>1.1</td></tr> -->
 	 </tbody>
    </table>
-</body>
-</html>
