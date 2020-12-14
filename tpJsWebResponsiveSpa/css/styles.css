@@ -54,3 +54,16 @@ thead th {
   color: #555;
 }
 
+/* ... en plus ...*/
+.small-zoom {
+  transform: scale(0.98);
+  transition: 0.6s;
+}
+
+.small-zoom:hover {
+  transform: scale(1);
+  border-width: 4px;
+  border-style: solid;
+  border-color: red;
+}
+
