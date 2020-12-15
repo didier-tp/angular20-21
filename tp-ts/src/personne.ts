@@ -1,7 +1,7 @@
 class Personne {
    prenom :string;
    nom : string;
-   age :number;
+   age :number;  
 
    incrementerAge() :void {       
        this.age++;
