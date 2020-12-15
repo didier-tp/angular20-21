@@ -1,3 +1,4 @@
+"use strict";
 var s = "abc";
 console.log(s);
 var x;
