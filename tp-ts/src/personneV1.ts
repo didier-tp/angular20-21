@@ -1,9 +1,7 @@
 export class Personne {
-   
-   constructor(public prenom:string="?",
-               public nom:string="?",
-               private _age:number=0){
-   }
+   prenom :string;
+   nom : string;
+   private _age :number;  
 
    public get age() : number {
        return this._age;
@@ -18,7 +16,11 @@ export class Personne {
        }
    }
 
-  
+   constructor(prenom:string="?",nom:string="?",age:number=0){
+       this.prenom=prenom;
+       this.nom=nom;
+       this._age=age;
+   }
 
    incrementerAge() :void {       
        this._age++;
