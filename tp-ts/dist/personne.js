@@ -8,10 +8,26 @@ var Personne = /** @class */ (function () {
         if (age === void 0) { age = 0; }
         this.prenom = prenom;
         this.nom = nom;
-        this.age = age;
+        this._age = age;
     }
+    Object.defineProperty(Personne.prototype, "age", {
+        get: function () {
+            return this._age;
+        },
+        set: function (newAge) {
+            if (newAge >= 0) {
+                this._age = newAge;
+            }
+            else {
+                //console.log("age négatif invalide");
+                throw "age négatif invalide";
+            }
+        },
+        enumerable: false,
+        configurable: true
+    });
     Personne.prototype.incrementerAge = function () {
-        this.age++;
+        this._age++;
     };
     return Personne;
 }());
