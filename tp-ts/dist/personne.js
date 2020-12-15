@@ -1,17 +1,18 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Personne = void 0;
 var Personne = /** @class */ (function () {
-    function Personne() {
+    function Personne(prenom, nom, age) {
+        if (prenom === void 0) { prenom = "?"; }
+        if (nom === void 0) { nom = "?"; }
+        if (age === void 0) { age = 0; }
+        this.prenom = prenom;
+        this.nom = nom;
+        this.age = age;
     }
     Personne.prototype.incrementerAge = function () {
         this.age++;
     };
     return Personne;
 }());
-var p1;
-p1 = new Personne();
-p1.prenom = "jean";
-p1.nom = "Bon";
-p1.age = 40;
-p1.incrementerAge();
-console.log("age=" + p1.age);
-console.log(JSON.stringify(p1));
+exports.Personne = Personne;
