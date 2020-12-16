@@ -1,1 +1,25 @@
-<p>calculatrice works!</p>
+<div class="c1">
+    <h3>calculatrice angular</h3>
+
+    <label>a :</label> <input type="number" [(ngModel)]="a" /> <br/>
+    <label>b :</label> <input type="number" [(ngModel)]="b" /> <br/>
+    <label>operation :</label>
+        <input type="button"  value="+" (click)="onCalculer('+')" /> 
+        &nbsp; <input type="button"  value="-" (click)="onCalculer('-')" />
+        &nbsp; <input type="button"  value="*" (click)="onCalculer('*')" />
+       <br/>
+    <label>resultat:</label> 
+    <span [style.font-weight]="res>0?'bold':'normal'"
+          [class.negatif]="res<0" >
+        {{res}}</span> <br/>
+    <input type="checkbox" [(ngModel)]="montrerHisto" /> voir l'historique des calculs<br/>
+    <ul *ngIf="montrerHisto">
+        <li *ngFor="let h of historiqueCalculs">{{h}}</li>
+    </ul>
+
+    <div class="c2" (mousemove)="onMouseMove($event)"
+                    (mouseout)="onMouseLeave($event)">
+        Zone à survoler à la souris .<br/>
+        x={{x}} , y={{y}}
+    </div>
+</div>
