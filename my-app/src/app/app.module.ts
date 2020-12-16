@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { XyComponent } from './basic/xy/xy.component';
 import { ZzComponent } from './basic/zz/zz.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { ZzComponent } from './basic/zz/zz.component';
     FooterComponent,
     BasicComponent,
     CalculatriceComponent,
-    TvaComponent,XyComponent,ZzComponent
+    TvaComponent, XyComponent , ZzComponent
   ],
   imports: [
     BrowserModule,

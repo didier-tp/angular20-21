@@ -13,7 +13,7 @@
           [class.negatif]="res<0" >
         {{res}}</span> <br/>
     <input type="checkbox" [(ngModel)]="montrerHisto" /> voir l'historique des calculs<br/>
-    <ul *ngIf="montrerHisto">
+    <ul *ngIf="montrerHisto && historiqueCalculs.length > 0">
         <li *ngFor="let h of historiqueCalculs">{{h}}</li>
     </ul>
 
