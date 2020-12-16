@@ -8,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class XyComponent implements OnInit {
   listeCouleurs =  [ "blue" , "red" , "black" ];
   couleur : string ="black";
-  message : string = "quelques valeurs au carré";
+  message : string = "(Xy) quelques valeurs au carré";
   values :number[] = [1,2,4,10,25];
 
   nouvelleValeur : number;
 
   onAjoutNouvelleValeur(){
-    this.values.push(Number(this.nouvelleValeur));
+    if(!isNaN(this.nouvelleValeur)){
+         this.values.push(Number(this.nouvelleValeur));
+     }
   }
 
 	constructor(){
