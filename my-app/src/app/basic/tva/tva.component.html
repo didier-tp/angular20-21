@@ -12,9 +12,9 @@
             (change)="onCalculerTvaEtTtc()">
       <option *ngFor="let t of listeTaux" [ngValue]="t">{{t}}</option>  
     </select> <br/>
-    <!-- 
+    <!--
     <input type="button" value="calculer Tva" (click)="onCalculerTvaEtTtc()" /> <br/>
-    -->
+     -->
     <div *ngIf="tva != 0">
       tva= <span>{{tva}}</span> <br/>
       ttc= <span>{{ttc}}</span> <br/>

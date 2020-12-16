@@ -11,6 +11,7 @@ import { TvaComponent } from './basic/tva/tva.component';
 import { FormsModule } from '@angular/forms';
 import { XyComponent } from './basic/xy/xy.component';
 import { ZzComponent } from './basic/zz/zz.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ZzComponent } from './basic/zz/zz.component';
     FooterComponent,
     BasicComponent,
     CalculatriceComponent,
-    TvaComponent, XyComponent , ZzComponent
+    TvaComponent, XyComponent , ZzComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
