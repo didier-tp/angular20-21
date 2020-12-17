@@ -1,6 +1,11 @@
 <div class="container-fluid">
-    <p> Welcome to {{title}} </p>
+    <!-- <p> Welcome to {{title}} </p> -->
+    <!--
     <app-header></app-header>
+    <app-header [titre]=" 'titre1' "></app-header>
+    <app-header titre="titre1"></app-header>
+    -->
+    <app-header [titre]="title"></app-header>
 
     <router-outlet></router-outlet> <!-- WelcomeComponent ou BasicComponent
                                         ou ... selon route courante --> 
