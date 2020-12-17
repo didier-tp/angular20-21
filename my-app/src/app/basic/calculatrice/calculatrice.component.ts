@@ -1,17 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-calculatrice',
   templateUrl: './calculatrice.component.html',
   styleUrls: ['./calculatrice.component.scss']
 })
-export class CalculatriceComponent implements OnInit {
+export class CalculatriceComponent implements OnInit,OnDestroy {
 
   a : number;
   b : number ;
   res : number;
 
   constructor() { }
+
+  ngOnDestroy(): void {
+    console.log("juste avant destruction du composant calculatrice")
+  }
+
+
 
   montrerHisto : boolean = true;
   historiqueCalculs :string[] = [];
