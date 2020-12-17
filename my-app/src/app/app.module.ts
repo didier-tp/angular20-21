@@ -16,6 +16,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsUtilModule } from 'src/bs-util/bs-util.module';
+import { MyHighLightDirective } from './common/directive/my-high-light.directive';
+import { ConversionComponent } from './conversion/conversion.component';
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { BsUtilModule } from 'src/bs-util/bs-util.module';
     FooterComponent,
     BasicComponent,
     CalculatriceComponent,
-    TvaComponent, XyComponent , ZzComponent, LoginComponent, WelcomeComponent
+    TvaComponent, XyComponent , ZzComponent, LoginComponent, WelcomeComponent, MyHighLightDirective, ConversionComponent
   ],
   imports: [
     BrowserModule,
