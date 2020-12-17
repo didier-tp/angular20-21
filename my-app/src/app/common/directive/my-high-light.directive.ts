@@ -9,11 +9,15 @@ export class MyHighLightDirective {
     el.nativeElement.style.backgroundColor = 'yellow';
     }
   */
- constructor(){
-   this.couleurFond="yellow";
+
+constructor() {}
+
+ 
+@Input('myHighLight')
+ public set highLightColor(c:string){
+    this.couleurFond=c?c:"yellow";
  }
 
- @Input('myHighLight')
  @HostBinding("style.backgroundColor")
  couleurFond : string ;
 
