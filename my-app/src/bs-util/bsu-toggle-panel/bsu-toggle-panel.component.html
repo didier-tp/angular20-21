@@ -1,1 +1,11 @@
-<p>bsu-toggle-panel works!</p>
+<div class="card">
+    <!-- <div class="card-header bg-info"> -->
+    <h4 class="card-header bg-primary">
+        <a class="text-light" (click)="toggleP = !toggleP">{{title}}
+            <span class="fa" [class.fa-chevron-circle-down]="!toggleP" [class.fa-chevron-circle-up]="toggleP"></span>
+        </a></h4>
+    <!-- </div> -->
+    <div class="card-body collapse " [class.show]="toggleP">
+        <ng-content></ng-content>
+    </div>
+</div>
