@@ -1,4 +1,5 @@
-<h3>login</h3>
+<h3>login (ex: admin1 , pwdadmin1 , admin)</h3>
+
 <form #formLogin="ngForm" class="form-horizontal">
   <div class="form-group row">   
     <label class="col-sm-4 text-sm-right">username:</label>
@@ -32,4 +33,4 @@
     </div>
   </div>
 </form>
-message: {{message}}
+message: <span [style.color]="loginOk?'green':'red'" >{{message}}</span>
