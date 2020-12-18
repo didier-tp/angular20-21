@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { PreferencesService } from '../common/service/preferences.service';
 
 @Component({
@@ -9,14 +9,22 @@ import { PreferencesService } from '../common/service/preferences.service';
 export class HeaderComponent implements OnInit {
 
   @Input()
-  titre :string = "titre_par_defaut";
+  public titre :string ="app";
 
-  constructor(public preferencesService : PreferencesService) {
-    console.log("dans constructeur , titre="+this.titre);
-  }
+  public couleurFondPrefereeLocale : string = "lightgrey";
+
+  constructor(private _preferencesService : PreferencesService) {
+    //synchronisation de la "copie locale":
+    this._preferencesService.couleurFondPrefereeObservable
+    .subscribe(
+      //callback éventuellement re-déclenchée plusieurs fois:
+      (couleurFondPreferee)=>{
+          console.log("nouvelle couleurFondPreferee="+couleurFondPreferee)
+          this.couleurFondPrefereeLocale=couleurFondPreferee;}
+    );
+   }
 
   ngOnInit(): void {
-    console.log("dans ngOnInit , titre="+this.titre);
   }
 
 }

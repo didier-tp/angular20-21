@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PreferencesService } from '../common/service/preferences.service';
-
+import { PreferencesService } from '../common/service/preferences.service'
 
 @Component({
   selector: 'app-footer',
@@ -9,10 +8,26 @@ import { PreferencesService } from '../common/service/preferences.service';
 })
 export class FooterComponent implements OnInit {
 
-  listeCouleurs : string[] = [ "lightyellow", "white",
-    "lightgrey" , "lightgreen" , "lightpink" , "lightblue"] ; 
+  public couleurFondPrefereeLocale : string = "lightgrey";
 
-  constructor(public preferencesService :PreferencesService) { }
+  public listeCouleurs : string[] = [ "lightyellow", "white",
+     "lightgrey" , "lightgreen" , "lightpink" , "lightblue"] ;
+
+
+  constructor(private _preferencesService : PreferencesService) {
+        //synchronisation de la "copie locale":
+        this._preferencesService.couleurFondPrefereeObservable
+            .subscribe(
+              //callback éventuellement re-déclenchée plusieurs fois:
+              (couleurFondPreferee)=>{
+                  this.couleurFondPrefereeLocale=couleurFondPreferee;}
+            );
+  }
+
+  public onCouleurFondPrefereeLocaleChange(){
+    this._preferencesService.couleurFondPreferee=
+                    this.couleurFondPrefereeLocale;
+  }
 
   ngOnInit(): void {
   }
