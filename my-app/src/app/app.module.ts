@@ -18,7 +18,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsUtilModule } from 'src/bs-util/bs-util.module';
 import { MyHighLightDirective } from './common/directive/my-high-light.directive';
 import { ConversionComponent } from './conversion/conversion.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { ConversionComponent } from './conversion/conversion.component';
     FormsModule,
     BrowserAnimationsModule,
     TabsModule.forRoot(),
-    BsUtilModule
+    BsUtilModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
