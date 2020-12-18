@@ -11,7 +11,7 @@ export class FooterComponent implements OnInit {
   public couleurFondPrefereeLocale : string = "lightgrey";
 
   public listeCouleurs : string[] = [ "lightyellow", "white",
-     "lightgrey" , "lightgreen" , "lightpink" , "lightblue"] ;
+     "lightgrey" , "lightgreen" , "lightpink" , "lightblue" , "black"] ;
 
 
   constructor(private _preferencesService : PreferencesService) {

@@ -12,15 +12,22 @@ export class HeaderComponent implements OnInit {
   public titre :string ="app";
 
   public couleurFondPrefereeLocale : string = "lightgrey";
+  public couleurTexteLocale : string = "black";
 
   constructor(private _preferencesService : PreferencesService) {
     //synchronisation de la "copie locale":
     this._preferencesService.couleurFondPrefereeObservable
     .subscribe(
       //callback éventuellement re-déclenchée plusieurs fois:
-      (couleurFondPreferee)=>{
-          console.log("nouvelle couleurFondPreferee="+couleurFondPreferee)
-          this.couleurFondPrefereeLocale=couleurFondPreferee;}
+      (couleurFondPrefereePartagee)=>{
+          console.log("nouvelle couleurFondPreferee="+couleurFondPrefereePartagee)
+          this.couleurFondPrefereeLocale=couleurFondPrefereePartagee;
+          if(couleurFondPrefereePartagee=="black"){
+            this.couleurTexteLocale="white";
+          }else{
+            this.couleurTexteLocale="black";
+          }
+        }
     );
    }
 
