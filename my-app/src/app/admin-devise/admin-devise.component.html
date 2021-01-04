@@ -1,6 +1,15 @@
 <p>admin-devise</p>
-codeDevise : <input [(ngModel)]="codeDevise" /> <br/>
+<input type="button" value="actualiser liste" (click)="onActualiser()"  /> <br/>
+<select size="8" [(ngModel)]="selectedDevise" >
+    <option *ngFor="let d of listeDevises" [ngValue]="d">[ {{d.code}} ] {{d.name}} {{d.change}}</option>
+</select>
+codeDevise : <input [(ngModel)]="selectedDevise.code" /> <br/>
+nomDevise : <input [(ngModel)]="selectedDevise.name" /> <br/>
+change : <input [(ngModel)]="selectedDevise.change" /> <br/>
 <input type="button" value="supprimer" (click)="onSupprimer()" /> <br/>
+<input type="button" value="nouvelle devise" (click)="onNouvelleDevise()" /> <br/>
+<input type="button" value="ajouter"  /> <br/>
+<input type="button" value="modifier"  /> <br/>
 {{message}}
 <hr/>
 <a href="http://localhost:8282/test-ws" target="_new">fixer securite</a>

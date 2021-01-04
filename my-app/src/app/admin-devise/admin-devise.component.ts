@@ -14,7 +14,22 @@ export class AdminDeviseComponent implements OnInit {
   listeDevises : Devise[];//liste des devises (pour selection)
   message : string = "";
 
-  constructor(private _deviseService : DeviseService) { }
+  constructor(private _deviseService : DeviseService) { 
+    this.selectedDevise = new Devise();
+  }
+
+  onNouvelleDevise(){
+     this.selectedDevise = new Devise();
+  }
+
+  onActualiser(){
+    this._deviseService.getAllDevises$()
+         .subscribe({
+            next: (tabDevises : Devise[])=>{ this.listeDevises = tabDevises },
+            error: (err) => { console.log("error:"+err)}
+         });
+  }
+  
 
   onRecupToutesDevise(){
   }
