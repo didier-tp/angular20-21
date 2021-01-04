@@ -1,15 +1,40 @@
-<p>admin-devise</p>
-<input type="button" value="actualiser liste" (click)="onActualiser()"  /> <br/>
-<select size="8" [(ngModel)]="selectedDevise" >
-    <option *ngFor="let d of listeDevises" [ngValue]="d">[ {{d.code}} ] {{d.name}} {{d.change}}</option>
-</select>
-codeDevise : <input [(ngModel)]="selectedDevise.code" /> <br/>
-nomDevise : <input [(ngModel)]="selectedDevise.name" /> <br/>
-change : <input [(ngModel)]="selectedDevise.change" /> <br/>
-<input type="button" value="supprimer" (click)="onSupprimer()" /> <br/>
-<input type="button" value="nouvelle devise" (click)="onNouvelleDevise()" /> <br/>
-<input type="button" value="ajouter"  /> <br/>
-<input type="button" value="modifier"  /> <br/>
+<p>admininstration des devises</p>
+<div class="row">
+    <div class="col-sm-4">  
+        <input type="button" value="actualiser liste devises" (click)="onActualiser()"  /> <br/>
+        <select size="8" [(ngModel)]="selectedDevise" 
+            (ngModelChange)="onSelection()">
+            <option *ngFor="let d of listeDevises" [ngValue]="d">[ {{d.code}} ] {{d.name}} {{d.change}}</option>
+        </select> 
+    </div> 
+    <div class="col-sm-8"> 
+        <input type="button" value="nouvelle devise" (click)="onNouvelleDevise()" /> <br/>
+        <form #formDevise="ngForm" class="form-horizontal">
+            <div class="form-group row">   
+                <label class="col-sm-4 text-sm-right">code:</label>
+                <div class="col-sm-8"> 
+                     <input name="code" class="form-control" [(ngModel)]="selectedDevise.code" [disabled]="!isNew"/>
+                </div>
+            </div>
+            <div class="form-group row"> 
+                <label class="col-sm-4 text-sm-right">nom:</label> 
+                <div class="col-sm-8">
+                     <input name="name" class="form-control" [(ngModel)]="selectedDevise.name" />
+                </div>
+            </div>
+           <div class="form-group row">  
+                <label class="col-sm-4 text-sm-right">change:</label> 
+                <div class="col-sm-8">
+                     <input name="change" class="form-control" [(ngModel)]="selectedDevise.change" /> 
+              </div>
+            </div>
+        </form>
+        <input type="button" [disabled]="!isNew" value="ajouter" (click)="onAjouterDevise()" /> &nbsp;
+        <input type="button" [disabled]="isNew" value="modifier" (click)="onModifierDevise()" /> <br/>
+        <input type="button" [disabled]="isNew || !confirmDelete" value="supprimer" (click)="onSupprimer()" /> ( après <input type="checkbox" [(ngModel)]="confirmDelete"/> confirmation suppression possible) 
+    </div>
+</div>
+<hr/>
 {{message}}
 <hr/>
 <a href="http://localhost:8282/test-ws" target="_new">fixer securite</a>
