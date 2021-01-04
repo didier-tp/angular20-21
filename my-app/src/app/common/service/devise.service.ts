@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Devise } from '../data/devise';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
 export interface ConvertResult {
@@ -17,6 +17,8 @@ export interface ConvertResult {
   providedIn: 'root'
 })
 export class DeviseService {
+
+  private _headers = new HttpHeaders({'Content-Type': 'application/json'});
 
   //private _apiBaseUrl ="http://localhost:8282/devise-api"; 
 
@@ -61,6 +63,22 @@ export class DeviseService {
     let url = this._apiBaseUrl + "/private/role_admin/devise/" + deviseCode ;
     console.log("deleteUrl=" + url );
     return this._http.delete(url);
+  }
+
+  public addDeviseServerSide$(devise:Devise):Observable<Devise>{
+    let url = this._apiBaseUrl + "/private/role_admin/devise/" ;
+    console.log("url=" + url );
+    return this._http.post<Devise>(url,
+                                   devise,
+                                  {headers: this._headers});
+  }
+
+  public updateDeviseServerSide$(devise:Devise):Observable<Devise>{
+    let url = this._apiBaseUrl + "/private/role_admin/devise/" ;
+    console.log("url=" + url );
+    return this._http.put<Devise>(url,
+                                   devise,
+                                  {headers: this._headers});
   }
 
 
