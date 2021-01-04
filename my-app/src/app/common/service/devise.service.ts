@@ -56,4 +56,12 @@ export class DeviseService {
               map( (res:ConvertResult) => res.result)
             );
   }
+  
+  public deleteDeviseServerSide$(deviseCode):Observable<any>{
+    let url = this._apiBaseUrl + "/private/role_admin/devise/" + deviseCode ;
+    console.log("deleteUrl=" + url );
+    return this._http.delete(url);
+  }
+
+
 }

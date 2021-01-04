@@ -21,6 +21,7 @@ import { ConversionComponent } from './conversion/conversion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
+import { AdminDeviseComponent } from './admin-devise/admin-devise.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
     FooterComponent,
     BasicComponent,
     CalculatriceComponent,
-    TvaComponent, XyComponent , ZzComponent, LoginComponent, WelcomeComponent, MyHighLightDirective, ConversionComponent
+    TvaComponent, XyComponent , ZzComponent, LoginComponent, WelcomeComponent, MyHighLightDirective, ConversionComponent, AdminDeviseComponent
   ],
   imports: [
     BrowserModule,
