@@ -1,0 +1,120 @@
+En règle générale les Tps seront effectués au fil des explications théoriques
+en mode (au choix):
+   - [rarement] refaire fonctionner les exemples du support de cours en repartant de zéro
+   - charger le projet des exemples du cours puis les analyser, les faire fonctionner
+   - effectuer éventuellement quelques modifications/variantes et les tester.
+
+Qui codera verra !!!
+
+URL pour récupérer "backend" pour Tp "appels de WS REST":
+https://githib.com/didier-mycontrib/tp_node_js
+projet intéressant: tp-backend-api (backend node/express , api REST)
+après téléchargement (via git clone ou download zip ) :
+  - npm install
+  - lancer_nodeJs_noDB.bat
+  - http://localhost:8282 et http://localhost:8282/test-ws
+
+URL pour récupérer "exemples_angular_avance" et autres appli "exemples" :
+repo git https://githib.com/didier-mycontrib/angular8plus
+projet "exp-adv-app" : appli pour tp "cours_angular_avancé"
+projet "ng-bs4-app" : application exemple (assez complète) avec ngx-bootstrap
+projet "flex-mat-app" : application exemple avec "angular-material"
+projet "universal-app" : application exemple avec "angular-universal"
+
+
+URL pour récupérer "appli de base" (fin du cours "angular" de base)
+à enrichir/perfectionner au sein du cours "angular_avancé":
+https://github.com/didier-tp/angular20-21
+projet "my-app" (petite application angular avec un peu d'appel Ws 
+                 et un peu de routing simple).
+
+
+Tp routing avec sous_niveau (children):
+----------------------------------------
+Le composant intermediaire "basic" (comportant les sous composants "tva" et "calculatrice")
+a déjà été codé en 2 ou 3 variantes :
+   1) avec <app-calculatrice> et <app-tva> toujours affichés
+   2) avec basculement via onglets dynamiques de ngx-bootstrap (tabset,tab)
+   3) avec éventuelle intégration dans <bsu-toggle-panel>
+On va maintenant mettre en oeuvre une quatrième variante utilisant un sous-niveau 
+"children : []" du routing angular et une nouvelle utilisation de <router-outlet>.
+Premiere version:
+- ajouter <router-outlet></router-outlet> dans basic.component.html
+  et commenter/retirer les anciens blocs <bsu-toggle-panel> ou <tabset><tab>...</>
+     ou <app-tva> et <app-calculatrice>
+- ajouter dans basic.component.html
+   <a routerLink="/basic/calculatrice" >calculatrice</a><br/>
+   <a routerLink="/basic/calculatrice" >calculatrice</a><br/>
+- ajuster un bloc de configuration de ce type dans app-routing.module.ts:
+ { path: 'basic', component: BasicComponent ,
+ children: [
+  { path: 'tva', component: TvaComponent },
+  { path: 'calculatrice', component: ....Component },
+  { path: '', redirectTo: 'tva', pathMatch: 'prefix'}
+  ]
+ }
+- tester le nouveau comportement de l'application
+Seconde version (avec 2 modes sur calculatrice : "simple" et "sophistiquee"):
+- ajouter (dans calculatrice.component.ts):
+  modeChoisi : string;
+- ajouter (dans calculatrice.component.html) un paramétrage pour faire en
+  sorte que le bouton poussoir "multiplication" ne soit affiché
+  que si modeChoisi=='sophistiquee'
+
+- ajuster les liens hypertextes suivants (basic.component.html):
+    <a routerLink="/basic/calculatrice/simple" >calculatrice simple</a><br/>
+    <a routerLink="/basic/calculatrice/sophistiquee" >calculatrice sophistiquee</a><br/>
+- ajuster la route imbriquée au sein app-routing.module.ts:
+children: [ ...,
+  { path: 'calculatrice/:mode', component: CalculatriceComponent }, ...
+  ]
+- ajouter et ajuster (dans calculatrice.component.ts):
+constructor(route : ActivatedRoute) {
+    route......subscribe(
+      (params: ....=> {
+        this.modeChoisi = params[....];
+      }
+    )
+    //NB:  { path: 'calculatrice/:mode', ... },
+   }
+- tester le nouveau comportement de l'application
+
+--------------------------
+Autre Tp possible sur le routing (plus long à effectuer)
+---------------
+Préliminaire éventuellement nécessaire:
+- recopier toute la partie ng-bs4-app/src/bs-util au sein de votre projet angular
+  my-app/src/bs-util (src/bs-util doit normalement être à coté de src/app) .
+- visualiser le contenu de src/bs-util/bs-util.module.ts (la partie exports).
+- revenir sur src/app.module.ts et ajouter BsUtilModule dans la partie imports .
+- utiliser ensuite <bsu-toggle-panel [title]="'...'" > ... </bsu-toggle-panel>
+  dans src/app/basic/basic.component.html ou ailleurs .
+---------------
+- récupérer (par copier/coller) le code du service "ProductService"
+  src/app/common/service/product.service.ts à recopier du projet exemple ng-bs4-app
+  vers votre projet "my-app" .
+- générer un nouveau composant de premier niveau "browse-products"
+- injecter "ProductService" dans "BrowseProductsComponent",
+- ajouter "browse-products" dans routes et menu de header
+- faire en sorte de "BrowseProductsComponent" puisse afficher les catégories
+  dans un liste <ul> <li *ngFor="...">...</li> </ul> et que l'on puisse
+  sélectionner une des catégories (celle ci sera mise en évidence par styles css).
+- tester cette première partie
+- en étant placé dans src/app/browse-products , générer via ng g component ...
+  un sous-sous-composant "productList"
+- ajouter <router-outlet></router-outlet> dans browse-products.component.html
+- configurer des sous-routes via un ajout d'un bloc "children" dans
+  src/app/app-routing.module.ts
+  Une de ces sous-route sera de type prodList/:category (avec paramètre)
+- faire en sorte que selon la catégorie sélectionnée , une navigation
+  déclenchée au sein de browse-products.component.ts via router.navigate()
+  vers [ 'browse-products/prodList' , categorieSelectionne ]
+  puis indirectement activer une callback enregistrée via 
+  this.activatedRoute.params.subscribe(...) dans le constructeur du sous sous
+  composant "ProdListComponent" .
+  Cette callback servira à actualiser une variable locale categorie
+  puis effectuer une requête ajax/http
+  de manière à ce que prodlist.component.html puisse afficher la liste
+  des produits de la catégorie sélectionnée.
+  
+  
