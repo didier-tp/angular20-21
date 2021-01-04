@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { tap } from 'rxjs/operators'
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Login } from '../data/login';
@@ -22,6 +23,16 @@ export class LoginService {
     let wsUrl  = this._apiBaseUrl +  "/public/auth" ; 
     return this._http.post<LoginResponse>(wsUrl ,
                                           login,
-                                          {headers: this._headers} );
+                                          {headers: this._headers} )
+                     .pipe(
+                        //tap permet d'enregistrer un traitement supplémentaire,
+                        //return inchangé
+                        tap(loginResponse => this.storeTokenOfLoginResponse(loginResponse) ) 
+                     )
+   }
+
+   storeTokenOfLoginResponse(loginResponse : LoginResponse){
+     sessionStorage.setItem('token',loginResponse.token);
+     //...
    }
 }

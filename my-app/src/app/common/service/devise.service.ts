@@ -33,7 +33,7 @@ export class DeviseService {
     return this._http.get<Devise[]>(url)
            .pipe(
               map( (tabDevises : Devise[])=> tabDevises.sort( 
-                     (d1,d2)=>d1.name.localeCompare(d2.name)  
+                     (d1,d2)=>d1.name.localeCompare(d2.name)   
                      ) 
                 )
            );
