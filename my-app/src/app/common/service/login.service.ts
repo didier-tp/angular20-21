@@ -27,6 +27,7 @@ export class LoginService {
                      .pipe(
                         //tap permet d'enregistrer un traitement supplémentaire,
                         //return inchangé
+                        //nécessite import { tap } from 'rxjs/operators'
                         tap(loginResponse => this.storeTokenOfLoginResponse(loginResponse) ) 
                      )
    }

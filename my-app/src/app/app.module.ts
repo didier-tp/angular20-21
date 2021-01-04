@@ -19,6 +19,8 @@ import { BsUtilModule } from 'src/bs-util/bs-util.module';
 import { MyHighLightDirective } from './common/directive/my-high-light.directive';
 import { ConversionComponent } from './conversion/conversion.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,13 @@ import { HttpClientModule } from '@angular/common/http';
     BsUtilModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyAuthInterceptor,
+      multi: true
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
