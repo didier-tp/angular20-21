@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-calculatrice',
@@ -10,8 +11,12 @@ export class CalculatriceComponent implements OnInit,OnDestroy {
   a : number;
   b : number ;
   res : number;
+  modeChoisi : string; // "simple" ou "sophistiquee"
 
-  constructor() { }
+  constructor(private _route:ActivatedRoute) { 
+      //dans app-routing.module.ts , { path: 'calculatrice/:mode', component: CalculatriceComponent }
+      this._route.params.subscribe((params : Params)=>{ this.modeChoisi = params['mode']; })
+  }
 
   ngOnDestroy(): void {
     console.log("juste avant destruction du composant calculatrice")

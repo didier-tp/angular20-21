@@ -8,6 +8,8 @@ import { ConversionComponent } from './conversion/conversion.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
+// :mode vaudra "simple" ou "sophistiquee" pour calculatrice/:mode
+
 const routes: Routes = [
   { path: 'ngr-welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/ngr-welcome', pathMatch: 'full'},
@@ -15,7 +17,7 @@ const routes: Routes = [
   { path: 'ngr-basic', component: BasicComponent,
    children: [
       { path: 'tva', component: TvaComponent },
-      { path: 'calculatrice', component: CalculatriceComponent },
+      { path: 'calculatrice/:mode', component: CalculatriceComponent },
       { path: '', redirectTo: 'tva', pathMatch: 'prefix'}
     ]
   },
