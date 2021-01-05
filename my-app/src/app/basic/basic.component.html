@@ -1,5 +1,5 @@
 <p>basic works!</p>
-
+<!--
 <bsu-toggle-panel title="calculatrice">
      <app-calculatrice></app-calculatrice>
 </bsu-toggle-panel>
@@ -7,7 +7,12 @@
 <bsu-toggle-panel title="tva">
     <app-tva></app-tva>
 </bsu-toggle-panel>
+-->
+<a routerLink="/ngr-basic/calculatrice" >calculatrice</a><br/>
+<a routerLink="/ngr-basic/tva" >tva</a><br/>
 
+<router-outlet> </router-outlet> <!-- affichera sous sous composant
+                                      selon fin d'url (route)-->
 
 <tabset>
     <!--
