@@ -33,7 +33,7 @@ import { AdminDeviseComponent } from './admin-devise/admin-devise.component';
     TvaComponent, XyComponent , ZzComponent, LoginComponent, WelcomeComponent, MyHighLightDirective, ConversionComponent, AdminDeviseComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
