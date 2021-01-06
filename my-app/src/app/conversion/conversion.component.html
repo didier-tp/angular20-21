@@ -1,13 +1,13 @@
 <h3>conversion de devise</h3>
-montant : <input [(ngModel)]="montant" /> <br/>
-code devise source : <select [(ngModel)]="codeDeviseSource" >
+montant : <input name="montant" [(ngModel)]="montant" /> <br/>
+code devise source : <select name="codeDevSource" [(ngModel)]="codeDeviseSource" >
     <option *ngFor="let d of listeDevises" [ngValue]="d.code">{{d.name}}</option>
 </select> <br/>
-code devise cible : <select [(ngModel)]="codeDeviseCible" >
+code devise cible : <select name="codeDevCible" [(ngModel)]="codeDeviseCible" >
     <option *ngFor="let d of listeDevises" [ngValue]="d.code">{{d.name}}</option>
 </select> <br/>
 <input type="button" (click)="onConvertir()" value="convertir" /> <br/>
-montantConverti = {{montantConverti}}
+montantConverti = <span id="montantConverti">{{montantConverti}}</span>
 <p></p>
 <bsu-toggle-panel title="liste des devises">
    <table border="1">
