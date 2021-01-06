@@ -39,6 +39,12 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    proxies: {
+      '/devise-api': {
+        'target': 'http://localhost:8282/devise-api',
+        'changeOrigin': true
+      }
+    }
   });
 };

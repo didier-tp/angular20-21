@@ -21,9 +21,9 @@ export class DeviseService extends AbstractDeviseService {
 
   private _headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-  //private _apiBaseUrl ="http://localhost:8282/devise-api"; 
+  //public apiBaseUrl ="http://localhost:8282/devise-api"; 
 
-  private _apiBaseUrl ="./devise-api"; 
+  public apiBaseUrl ="./devise-api"; 
   // with prefix in proxy.conf.json 
   // (ng serve --proxy-config proxy.conf.json)
   // or other config in production mode
@@ -33,7 +33,7 @@ export class DeviseService extends AbstractDeviseService {
   }
 
   public getAllDevises$() : Observable<Devise[]>{
-    let url = this._apiBaseUrl + "/public/devise" ;
+    let url = this.apiBaseUrl + "/public/devise" ;
     console.log( "url = " + url);
     return this._http.get<Devise[]>(url)
            .pipe(
@@ -53,7 +53,7 @@ export class DeviseService extends AbstractDeviseService {
                       .set('amount', montant.toString())
                       .set('source', codeDeviseSrc)
                       .set('target', codeDeviseTarget);
-      let url = this._apiBaseUrl 
+      let url = this.apiBaseUrl 
              + `/public/convert?${params.toString()}`;
       //console.log( "url = " + url);
       return this._http.get<ConvertResult>(url)
@@ -63,13 +63,13 @@ export class DeviseService extends AbstractDeviseService {
   }
   
   public deleteDeviseServerSide$(deviseCode):Observable<any>{
-    let url = this._apiBaseUrl + "/private/role_admin/devise/" + deviseCode ;
+    let url = this.apiBaseUrl + "/private/role_admin/devise/" + deviseCode ;
     console.log("deleteUrl=" + url );
     return this._http.delete(url);
   }
 
   public addDeviseServerSide$(devise:Devise):Observable<Devise>{
-    let url = this._apiBaseUrl + "/private/role_admin/devise/" ;
+    let url = this.apiBaseUrl + "/private/role_admin/devise/" ;
     console.log("url=" + url );
     return this._http.post<Devise>(url,
                                    devise,
@@ -77,7 +77,7 @@ export class DeviseService extends AbstractDeviseService {
   }
 
   public updateDeviseServerSide$(devise:Devise):Observable<Devise>{
-    let url = this._apiBaseUrl + "/private/role_admin/devise/" ;
+    let url = this.apiBaseUrl + "/private/role_admin/devise/" ;
     console.log("url=" + url );
     return this._http.put<Devise>(url,
                                    devise,
