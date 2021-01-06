@@ -24,7 +24,8 @@ export class DeviseServiceSimu extends AbstractDeviseService {
   private devises : Devise[] = [
     new Devise('EUR','euro',1.0),
     new Devise('USD','dollar',1.1),
-    new Devise('GBP','livre',0.9)
+    new Devise('GBP','livre',0.9),
+    new Devise('JPY','yen',123.1)
   ];
 
   public getAllDevises$() : Observable<Devise[]>{
@@ -39,7 +40,9 @@ export class DeviseServiceSimu extends AbstractDeviseService {
                    codeDeviseTarget : string
                    ) : Observable<number> {
       let coeff =  Math.random();//coefficient aleatoire ici (simple simulation)
-      let montantConverti = montant * coeff;                    
+      let montantConverti = montant * coeff;  
+      if(codeDeviseSrc=='EUR'&&codeDeviseTarget=='USD')  
+           montantConverti=217.3913;                 
       return of(montantConverti) //version temporaire (cependant asynchrone)
             .pipe(
                  delay(222) //simuler une attente de 222ms 

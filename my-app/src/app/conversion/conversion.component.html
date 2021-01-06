@@ -6,7 +6,7 @@ code devise source : <select name="codeDevSource" [(ngModel)]="codeDeviseSource"
 code devise cible : <select name="codeDevCible" [(ngModel)]="codeDeviseCible" >
     <option *ngFor="let d of listeDevises" [ngValue]="d.code">{{d.name}}</option>
 </select> <br/>
-<input type="button" (click)="onConvertir()" value="convertir" /> <br/>
+<input type="button" id="btnConv" (click)="onConvertir()" value="convertir" /> <br/>
 montantConverti = <span id="montantConverti">{{montantConverti}}</span>
 <p></p>
 <bsu-toggle-panel title="liste des devises">

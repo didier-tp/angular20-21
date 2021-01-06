@@ -42,6 +42,7 @@ export class ConversionComponent implements OnInit {
       this.codeDeviseSource = tabDevises[0].code; //valeur par défaut
       this.codeDeviseCible = tabDevises[0].code; //valeur par défaut
     }
+    console.log("initListeDevises()  called")
   }
 
   //ngOnInit() est automatiquement appelée par le framework après le constructeur

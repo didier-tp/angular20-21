@@ -1,3 +1,6 @@
+// ng test --include=**/conversion/*.spec.ts
+// pour ne lancer que le test unitaire sur le composant conversion
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConversionComponent } from './conversion.component';
@@ -23,3 +26,4 @@ describe('ConversionComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
