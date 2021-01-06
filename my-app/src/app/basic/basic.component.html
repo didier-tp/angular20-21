@@ -9,7 +9,9 @@
 </bsu-toggle-panel>
 -->
 <a routerLink="/ngr-basic/calculatrice/simple" >calculatrice simple</a><br/>
-<a routerLink="/ngr-basic/calculatrice/sophistiquee" >calculatrice sophistiquee</a><br/>
+<a routerLink="/ngr-basic/calculatrice/sophistiquee"
+    [style.display]="loginService.userRoles=='admin'?'inline':'none'"
+ >calculatrice sophistiquee</a><br/>
 <!-- calculatrice/:mode -->
 <a routerLink="/ngr-basic/tva" >tva</a><br/>
 

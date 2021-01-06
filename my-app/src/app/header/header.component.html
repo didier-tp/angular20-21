@@ -9,4 +9,5 @@
     <a routerLink='/ngr-admin-devise'> admin-devise</a> &nbsp;
    -->
 </p>
-<bsu-nav-bar  [brandTitle]="titre" [menuDefs]="myMenuDef"></bsu-nav-bar>
+<bsu-nav-bar  [brandTitle]="titre" [currentUserRoles]="loginService.userRoles"
+[menuDefs]="myMenuDef"></bsu-nav-bar>

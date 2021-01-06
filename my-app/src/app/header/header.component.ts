@@ -1,5 +1,6 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { MenuDefinition } from 'src/bs-util/data/MenuDefinition';
+import { LoginService } from '../common/service/login.service';
 import { PreferencesService } from '../common/service/preferences.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class HeaderComponent implements OnInit {
       children : [
         { label : "login" , path : "/ngr-login" } ,
         { divider : true },
-        { label : "admin-devise" , path : "/ngr-admin-devise" }
+        { label : "admin-devise" , path : "/ngr-admin-devise" , role : "admin" },
+        { label : "calculatrice sophistiquee" , path : "/ngr-basic/calculatrice/sophistiquee" , role : "admin" }
       ]
     },
     { label : "basic" , path : "/ngr-basic" } , 
@@ -28,7 +30,8 @@ export class HeaderComponent implements OnInit {
   public couleurFondPrefereeLocale : string = "lightgrey";
   public couleurTexteLocale : string = "black";
 
-  constructor(private _preferencesService : PreferencesService) {
+  constructor(private _preferencesService : PreferencesService,
+              public loginService : LoginService) {
     //synchronisation de la "copie locale":
     this._preferencesService.couleurFondPrefereeObservable
     .subscribe(
