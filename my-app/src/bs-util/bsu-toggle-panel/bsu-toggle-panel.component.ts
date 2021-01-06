@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'bsu-toggle-panel',
@@ -7,14 +7,27 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BsuTogglePanelComponent implements OnInit {
 
-  toggleP : boolean = false;
+  toggleP : boolean =false;
 
   @Input()
-  title : string = "default-panel-title";
+  title : string = 'default panel title';
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
+
+/*
+exemple d'utilisation:
+
+<bsu-toggle-panel [title]="'panel1'" >
+		<app-part1></app-part1> ou ...
+	</bsu-toggle-panel>
+	  
+	<bsu-toggle-panel [title]="'panel2'" >
+		<div>contenu du paneau 2</div>
+	</bsu-toggle-panel>
+
+*/
