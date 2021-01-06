@@ -1,9 +1,12 @@
 <p class="entete" [style.color]="couleurTexteLocale"
 [style.background-color]="couleurFondPrefereeLocale">
     header - <span id="appHeaderTitle">{{titre | uppercase}}</span> -
+   <!--
     <a routerLink='/ngr-welcome'> welcome</a> &nbsp;
     <a routerLink='/ngr-basic'> basic</a> &nbsp;
     <a routerLink='/ngr-conversion'> conversion</a> &nbsp;
     <a routerLink='/ngr-login'> login</a> &nbsp;
     <a routerLink='/ngr-admin-devise'> admin-devise</a> &nbsp;
+   -->
 </p>
+<bsu-nav-bar  [brandTitle]="titre" [menuDefs]="myMenuDef"></bsu-nav-bar>

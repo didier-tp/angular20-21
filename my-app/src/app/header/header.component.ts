@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { MenuDefinition } from 'src/bs-util/data/MenuDefinition';
 import { PreferencesService } from '../common/service/preferences.service';
 
 @Component({
@@ -10,6 +11,19 @@ export class HeaderComponent implements OnInit {
 
   @Input()
   public titre :string ="app";
+
+  public myMenuDef: MenuDefinition[] = [
+    { label : "administrateur" , 
+      children : [
+        { label : "login" , path : "/ngr-login" } ,
+        { divider : true },
+        { label : "admin-devise" , path : "/ngr-admin-devise" }
+      ]
+    },
+    { label : "basic" , path : "/ngr-basic" } , 
+    { label : "conversion" , path : "/ngr-conversion" } , 
+    { label : "welcome" , path : "/ngr-welcome" }
+    ];
 
   public couleurFondPrefereeLocale : string = "lightgrey";
   public couleurTexteLocale : string = "black";
