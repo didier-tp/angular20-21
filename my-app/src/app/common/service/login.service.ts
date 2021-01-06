@@ -10,6 +10,8 @@ import { LoginResponse } from '../data/login-response';
 })
 export class LoginService {
 
+  public userRoles : string | undefined = undefined; //roles de la personne connectée
+
   private _apiBaseUrl ="./login-api"; 
   // with prefix in proxy.conf.json 
   // (ng serve --proxy-config proxy.conf.json)
@@ -34,6 +36,10 @@ export class LoginService {
 
    storeTokenOfLoginResponse(loginResponse : LoginResponse){
      sessionStorage.setItem('token',loginResponse.token);
-     //...
+     if(loginResponse.status){
+       this.userRoles = loginResponse.roles;
+     }else {
+      this.userRoles = null;
+     }
    }
 }
