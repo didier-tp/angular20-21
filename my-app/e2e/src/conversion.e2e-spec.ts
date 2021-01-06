@@ -6,15 +6,15 @@ describe('workspace-project App', () => {
   beforeEach(() => {
     page = new ConversionPage();
   })
-
-it('should convert EUR to USD correctly', () => {
-page.navigateTo();
+  
+it('should convert EUR to USD correctly', async () => {
+await page.navigateTo();
 page.getInputMontantElement().clear(); //clear default value
 page.getInputMontantElement().sendKeys("200");
 page.getSelectCodeDevSourceOptionElementContaining("Euro").click();
 page.getSelectCodeDevCibleOptionElementContaining("Dollar").click();
 page.getButtonConvertirElement().click();
-browser.sleep(5000);
+await browser.sleep(1000);
 page.getMontantConvertiText().then((resConv)=>{
 console.log("resConv=" + resConv);
 expect(Number(resConv)).toBeCloseTo(217.4,0.1);
