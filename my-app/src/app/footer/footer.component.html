@@ -5,4 +5,11 @@
           <option *ngFor="let c of listeCouleurs" [ngValue]="c">
                   {{c}}</option>
       </select>
+
+      humeur:
+      <select [(ngModel)]="humeur"
+          (ngModelChange)="onHumeurChange()" >
+          <option *ngFor="let h of listeHumeurs" [ngValue]="h">
+                  {{h}}</option>
+      </select>
   </p>

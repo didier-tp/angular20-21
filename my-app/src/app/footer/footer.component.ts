@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PreferencesService } from '../common/service/preferences.service'
 
 @Component({
@@ -7,6 +7,16 @@ import { PreferencesService } from '../common/service/preferences.service'
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+
+  @Output()
+  public changeHumeurEvent : EventEmitter<{value:string}> = new EventEmitter<{value:string}>();
+  
+  public listeHumeurs = [ "bonne humeur" , "mauvaise humeur"];
+  public humeur = "bonne humeur";
+
+  public onHumeurChange(){
+    this.changeHumeurEvent.emit({value:this.humeur});
+  }
 
   public couleurFondPrefereeLocale : string = "lightgrey";
 

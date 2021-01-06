@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  public onChangementHumeur(evt){
+    console.log("nouvelle humeur=" + evt.value);
+  }
 }
