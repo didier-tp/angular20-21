@@ -15,10 +15,14 @@ page.getSelectCodeDevSourceOptionElementContaining("Euro").click();
 page.getSelectCodeDevCibleOptionElementContaining("Dollar").click();
 page.getButtonConvertirElement().click();
 await browser.sleep(1000);
+let resConv = await page.getMontantConvertiText();
+console.log("resConv=" + resConv);
+expect(Number(resConv)).toBeCloseTo(217.4,0.1);
+/*
 page.getMontantConvertiText().then((resConv)=>{
 console.log("resConv=" + resConv);
 expect(Number(resConv)).toBeCloseTo(217.4,0.1);
-})
+})*/
 });
 
 afterEach(async () => {
