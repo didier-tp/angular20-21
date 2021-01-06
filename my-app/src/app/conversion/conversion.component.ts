@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviseService} from '../common/service/devise.service'
 import { Devise} from '../common/data/devise'
+import { AbstractDeviseService } from '../common/service/abstract-devise-service';
 
 @Component({
   selector: 'app-conversion',
@@ -16,7 +17,8 @@ export class ConversionComponent implements OnInit {
 
   listeDevises : Devise[]; //à choisir dans liste déroulante.
 
-  constructor(private _deviseService : DeviseService) { }
+  //constructor(private _deviseService : DeviseService) { }
+  constructor(private _deviseService : AbstractDeviseService) { }
 
   onConvertir(){
         console.log("debut de onConvertir")

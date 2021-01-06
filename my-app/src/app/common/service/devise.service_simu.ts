@@ -2,12 +2,23 @@ import { Injectable } from '@angular/core';
 import { Devise } from '../data/devise';
 import { Observable, of } from 'rxjs';
 import { delay, map} from 'rxjs/operators';
+import { AbstractDeviseService } from './abstract-devise-service';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class DeviseService {
+export class DeviseServiceSimu extends AbstractDeviseService {
+  
+  public deleteDeviseServerSide$(deviseCode: any): Observable<any> {
+    throw new Error('Method not implemented.');
+  }
+  public addDeviseServerSide$(devise: Devise): Observable<Devise> {
+    throw new Error('Method not implemented.');
+  }
+  public updateDeviseServerSide$(devise: Devise): Observable<Devise> {
+    throw new Error('Method not implemented.');
+  }
 
   //jeux de données (en dur) pour pré-version (simulation asynchrone)
   private devises : Devise[] = [

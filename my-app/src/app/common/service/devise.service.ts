@@ -3,20 +3,21 @@ import { Devise } from '../data/devise';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { AbstractDeviseService, ConvertResult } from './abstract-devise-service';
 
-
+/*
 export interface ConvertResult {
   source :string; //ex: "EUR",
   target :string; //ex: "USD",
   amount :number; //ex: 200.0
   result :number; //ex: 217.3913
-};
+};*/
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class DeviseService {
+export class DeviseService extends AbstractDeviseService {
 
   private _headers = new HttpHeaders({'Content-Type': 'application/json'});
 
@@ -27,7 +28,9 @@ export class DeviseService {
   // (ng serve --proxy-config proxy.conf.json)
   // or other config in production mode
 
-  constructor(private _http : HttpClient){}
+  constructor(private _http : HttpClient){
+    super();
+  }
 
   public getAllDevises$() : Observable<Devise[]>{
     let url = this._apiBaseUrl + "/public/devise" ;

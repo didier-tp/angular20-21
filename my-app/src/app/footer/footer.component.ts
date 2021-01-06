@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
   public humeur = "bonne humeur";
 
   public onHumeurChange(){
-    this.changeHumeurEvent.emit({value:this.humeur});
+    this.changeHumeurEvent.emit({value: this.humeur});
   }
 
   public couleurFondPrefereeLocale : string = "lightgrey";

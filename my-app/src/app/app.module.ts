@@ -22,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyAuthInterceptor } from './common/interceptor/my-auth.interceptor';
 import { AdminDeviseComponent } from './admin-devise/admin-devise.component';
+import { AbstractDeviseService } from './common/service/abstract-devise-service';
+import { DeviseService } from './common/service/devise.service';
+import { DeviseServiceSimu } from './common/service/devise.service_simu';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { AdminDeviseComponent } from './admin-devise/admin-devise.component';
       provide: HTTP_INTERCEPTORS,
       useClass: MyAuthInterceptor,
       multi: true
-      }
+      },
+      { provide: AbstractDeviseService, useClass: DeviseService }
+      //{ provide: AbstractDeviseService, useClass: DeviseServiceSimu }
   ],
   bootstrap: [AppComponent]
 })
