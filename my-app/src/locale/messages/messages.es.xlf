@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="AppTitle" datatype="html">
+        <target>APLICACIÓN DE COMPUTADORA ANGULAR</target>
+        <source>APPLICATION INFORMATIQUE ANGULAR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">title of application</note>
+        <note priority="1" from="meaning">AppTitle</note>
+      </trans-unit>
+      <trans-unit id="f836bace6ae0cb9e3c76b27cb385279b7b27c177" datatype="html">
+        <target>comentario para la aplicación</target>
+        <source>commentaire pour application</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">application comment</note>
+        <note priority="1" from="meaning">AppComment</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

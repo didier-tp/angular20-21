@@ -25,7 +25,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
@@ -36,6 +37,21 @@
             "scripts": []
           },
           "configurations": {
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/my-app-fr/",
+              "i18nFile": "src/locale/messages/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "i18nMissingTranslation": "error"
+              },
+              "de": {
+              "aot": true,
+              "outputPath": "dist/my-app-de/",
+              "i18nFile": "src/locale/messages/messages.de.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "de"
+              },
             "production": {
               "fileReplacements": [
                 {
@@ -61,7 +77,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -74,7 +92,13 @@
           "configurations": {
             "production": {
               "browserTarget": "my-app:build:production"
-            }
+            },
+            "fr": {
+              "browserTarget": "my-app:build:fr"
+              },
+            "de": {
+              "browserTarget": "my-app:build:de"
+              }
           }
         },
         "extract-i18n": {
@@ -92,7 +116,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",

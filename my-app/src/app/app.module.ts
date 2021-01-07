@@ -25,6 +25,8 @@ import { AdminDeviseComponent } from './admin-devise/admin-devise.component';
 import { AbstractDeviseService } from './common/service/abstract-devise-service';
 import { DeviseService } from './common/service/devise.service';
 import { DeviseServiceSimu } from './common/service/devise.service_simu';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { DeviseServiceSimu } from './common/service/devise.service_simu';
     BrowserAnimationsModule,
     TabsModule.forRoot(),
     BsUtilModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
@@ -50,8 +53,8 @@ import { DeviseServiceSimu } from './common/service/devise.service_simu';
       useClass: MyAuthInterceptor,
       multi: true
       },
-      { provide: AbstractDeviseService, useClass: DeviseService }
-      //{ provide: AbstractDeviseService, useClass: DeviseServiceSimu }
+      //{ provide: AbstractDeviseService, useClass: DeviseService }
+      { provide: AbstractDeviseService, useClass: DeviseServiceSimu }
   ],
   bootstrap: [AppComponent]
 })
