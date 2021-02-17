@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Login } from '../common/data/login'
 import { LoginResponse } from '../common/data/login-response';
 import { LoginService } from '../common/service/login.service';
@@ -8,7 +8,9 @@ import { LoginService } from '../common/service/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit , DoCheck {
+
+  public details: string ="***";
 
   public login : Login = new Login();
   public message :string ;
@@ -37,6 +39,14 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private _loginService : LoginService) { }
+  
+  @ViewChild('spy', { static: true })
+e_username: ElementRef<HTMLElement>
+
+  ngDoCheck(): void {
+    this.details = "##" + this.e_username.nativeElement.classList;
+  }
+  
 
   ngOnInit(): void {
   }

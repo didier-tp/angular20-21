@@ -9,12 +9,12 @@ code devise cible : <select name="codeDevCible" [(ngModel)]="codeDeviseCible" >
 <input type="button" id="btnConv" (click)="onConvertir()" value="convertir" /> <br/>
 montantConverti = <span id="montantConverti">{{montantConverti}}</span>
 <p></p>
-<bsu-toggle-panel title="liste des devises">
+<!-- <bsu-toggle-panel title="liste des devises"> -->
    <table border="1">
        <tr><th>code</th><th>name</th><th>change</th></tr>
        <tr *ngFor="let d of listeDevises">
            <td>{{d.code}}</td><td>{{d.name}}</td><td>{{d.change}}</td>
         </tr>
    </table>
-</bsu-toggle-panel>
+<!-- </bsu-toggle-panel> -->
 

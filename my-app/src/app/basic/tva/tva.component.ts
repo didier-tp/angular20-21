@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExponentialPipe } from 'src/app/common/pipe/exponential.pipe';
 
 @Component({
   selector: 'app-tva',

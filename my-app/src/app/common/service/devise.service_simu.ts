@@ -40,7 +40,9 @@ export class DeviseServiceSimu extends AbstractDeviseService {
                    codeDeviseTarget : string
                    ) : Observable<number> {
       let coeff =  Math.random();//coefficient aleatoire ici (simple simulation)
-      let montantConverti = montant * coeff;  
+      let montantConverti = montant * coeff; 
+      if(codeDeviseSrc==codeDeviseTarget)  
+           montantConverti=montant; 
       if(codeDeviseSrc=='EUR'&&codeDeviseTarget=='USD')  
            montantConverti=217.3913;                 
       return of(montantConverti) //version temporaire (cependant asynchrone)

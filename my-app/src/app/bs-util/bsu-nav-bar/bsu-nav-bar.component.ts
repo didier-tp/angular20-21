@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MenuDefinition } from "src/bs-util/data/MenuDefinition";
+import { MenuDefinition } from "../data/MenuDefinition";
 
 @Component({
   selector: 'bsu-nav-bar',

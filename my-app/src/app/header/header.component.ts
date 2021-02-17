@@ -1,5 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
-import { MenuDefinition } from 'src/bs-util/data/MenuDefinition';
+import { MenuDefinition } from '../bs-util/data/MenuDefinition';
 import { LoginService } from '../common/service/login.service';
 import { PreferencesService } from '../common/service/preferences.service';
 

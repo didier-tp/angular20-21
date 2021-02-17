@@ -48,3 +48,5 @@ describe('DeviseService', () => {
 // ng test --include=**/service/*.spec.ts
 // pour ne lancer que les tests unitaires sur les services
 
+// ng test --include=**/service/*.spec.ts --watch=false
+

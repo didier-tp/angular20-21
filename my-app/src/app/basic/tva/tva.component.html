@@ -1,22 +1,23 @@
 <div class="c1" >
     <h3>Calcul de tva</h3>
     <label>ht:</label> 
-    <input type="text" [(ngModel)]="ht"
+    <input type="text" [(ngModel)]="ht" name="ht"
           (input)="onCalculerTvaEtTtc()" /> <br/>
           
     <label>taux:</label>
     <!--
     <input type="text" [(ngModel)]="taux" /> <br/>
     -->
-    <select [(ngModel)]="taux"
+    <select [(ngModel)]="taux" name="taux"
             (change)="onCalculerTvaEtTtc()">
       <option *ngFor="let t of listeTaux" [ngValue]="t">{{t}}</option>  
     </select> <br/>
     <!--
     <input type="button" value="calculer Tva" (click)="onCalculerTvaEtTtc()" /> <br/>
      -->
-    <div *ngIf="tva != 0">
-      tva= <span>{{tva | number:'1.0-2'}}</span> <br/>
-      ttc= <span>{{ttc | number:'1.0-2'}}</span> <br/>
-    </div>
+    <!-- <div *ngIf="tva != 0"> -->
+      tva= <span id="spanTva">{{tva | number:'1.0-2'}}</span> <br/>
+      ttc= <span id="spanTtc">{{ttc | number:'1.0-2'}}</span> <br/>
+    <!-- </div> -->
+    <!-- <p> 5 au cube = {{ 5 | exponential:3}}</p> -->
   </div>
